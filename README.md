@@ -26,6 +26,24 @@ A compact Python toolkit for running an **unrestricted long-form novel generatio
 
 Chapters and the serialized configuration will be written to the chosen output directory.
 
+### 命令行快速运行（中文提示）
+无需提前安装，直接在仓库根目录执行下面的命令即可生成示例长篇小说章节：
+
+- 直接运行：
+  ```bash
+  python -m novel_agent --output ./novel_output
+  ```
+
+- 指定配置文件（例如随仓库提供的 `examples/story_config.json`）：
+  ```bash
+  python -m novel_agent --config ./examples/story_config.json --output ./custom_story
+  ```
+
+若已使用 `pip install -e .` 安装，则也可以用入口命令：
+```bash
+novel-agent --output ./novel_output
+```
+
 ## Customizing the agent
 - Edit `examples/story_config.json` or create your own; all fields align with the `StoryConfig` dataclass.
 - Swap in a real model by implementing `LLMClient.generate`—for example, wrapping an OpenAI or HuggingFace client—and pass it to `NovelAgent` instead of the default `LocalTemplateLLM`.
