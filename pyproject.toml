@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novel-agent"
+version = "0.1.0"
+description = "Unrestricted long-form novel generation agent"
+authors = [{ name = "Auto-generated" }]
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["novel_agent"]
+
+[project.scripts]
+novel-agent = "novel_agent.cli:main"
